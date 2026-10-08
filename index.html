@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasir Crisman</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Aplikasi Kasir</h1>
+
+    <section>
+      <h2>Tambah Barang</h2>
+      <form id="form-barang" novalidate>
+        <label for="nama">Nama Barang</label>
+        <input id="nama" type="text" placeholder="contoh: buku tulis">
+        <small id="error-nama" class="error"></small>
+
+        <label for="harga">Harga Satuan (Rp)</label>
+        <input id="harga" type="number" min="500" step="1" placeholder="contoh: 5000">
+        <small id="error-harga" class="error"></small>
+
+        <label for="qty">Jumlah / Qty</label>
+        <input id="qty" type="number" min="1" step="1" placeholder="contoh: 2">
+        <small id="error-qty" class="error"></small>
+
+        <button type="submit">Tambah Barang</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Daftar Belanja (<span id="jumlah-item">0 item</span>)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>No</th><th>Nama Barang</th><th>Harga Satuan</th><th>Qty</th><th>Subtotal</th><th>Aksi</th></tr>
+          </thead>
+          <tbody id="tabel-keranjang"></tbody>
+        </table>
+      </div>
+      <p id="keranjang-kosong">Belum ada barang di keranjang.</p>
+    </section>
+
+    <section>
+      <h2>Total Belanja</h2>
+      <p>Total: <strong id="total-belanja">Rp0</strong></p>
+      <p>Diskon (10% jika belanja minimal Rp50.000): <strong id="diskon">Rp0</strong></p>
+      <p>Total Akhir: <strong id="total-akhir">Rp0</strong></p>
+    </section>
+
+    <section>
+      <h2>Pembayaran</h2>
+      <label for="uang-bayar">Uang Bayar (Rp)</label>
+      <input id="uang-bayar" type="number" min="0" step="1" placeholder="masukkan uang bayar">
+      <p>Kembalian: <strong id="kembalian">Rp0</strong></p>
+      <p id="status-bayar"></p>
+      <button id="reset-transaksi" type="button">Transaksi Baru / Reset</button>
+    </section>
+  </main>
+</body>
+</html>

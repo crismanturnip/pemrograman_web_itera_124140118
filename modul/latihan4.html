@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Latihan DOM dan API</title><style>body{font:16px Arial;max-width:850px;margin:24px auto;padding:0 12px}section{border:1px solid #bbb;padding:12px;margin:12px 0}input,button{padding:7px;margin:4px}li{margin:5px}table,th,td{border:1px solid #aaa;border-collapse:collapse;padding:6px}.gelap{background:#222;color:white}.gelap section{border-color:#aaa}</style></head><body>
+<h1>Latihan DOM dan API</h1>
+<section><h2>Tambah dan hapus item</h2><button id="tambah">Tambah Item</button><button id="hapus">Hapus Item</button><div id="daftar"></div></section>
+<section><h2>Form mahasiswa dan localStorage</h2><form id="form"><input id="nama" placeholder="nama" required minlength="3"><input id="nim" placeholder="nim" required><button>Tambah mahasiswa</button></form><ul id="mahasiswa"></ul></section>
+<section><h2>Fetch API, cari post dan halaman</h2><button id="ambil">Ambil Data</button><input id="cari" placeholder="cari judul post"><div id="hasil"></div><button id="prev">Previous</button><span id="halaman"></span><button id="next">Next</button></section>
+<section><h2>Dark mode</h2><button id="mode">Ubah mode</button></section>
+<section><h2>Todo List</h2><form id="todo-form"><input id="todo-input" placeholder="tugas baru" required><button>Tambah</button></form><ul id="todos"></ul></section>
+<script>
+const $=id=>document.getElementById(id);let nomor=0;
+$('tambah').onclick=()=>{const p=document.createElement('p');p.textContent='Item '+(++nomor);$('daftar').append(p)};
+$('hapus').onclick=()=>{if($('daftar').lastElementChild){$('daftar').lastElementChild.remove();nomor--}};
+const baca=(key)=>{try{return JSON.parse(localStorage.getItem(key))||[]}catch{return []}};
+let mahasiswa=baca('latihanMahasiswa');
+function tampilMahasiswa(){$('mahasiswa').replaceChildren();mahasiswa.forEach((m,i)=>{const li=document.createElement('li');li.textContent=m.nama+' ('+m.nim+') ';const hapus=document.createElement('button');hapus.textContent='Hapus';hapus.onclick=()=>{mahasiswa.splice(i,1);simpanMahasiswa()};li.append(hapus);$('mahasiswa').append(li)})}
+function simpanMahasiswa(){localStorage.setItem('latihanMahasiswa',JSON.stringify(mahasiswa));tampilMahasiswa()}
+$('form').onsubmit=e=>{e.preventDefault();mahasiswa.push({nama:$('nama').value.trim(),nim:$('nim').value.trim()});simpanMahasiswa();e.target.reset()};tampilMahasiswa();
+let posts=[],page=1;const perPage=5;
+function tampilPosts(){const kata=$('cari').value.toLowerCase();const cocok=posts.filter(p=>p.title.toLowerCase().includes(kata));const total=Math.max(1,Math.ceil(cocok.length/perPage));page=Math.min(page,total);$('hasil').replaceChildren();cocok.slice((page-1)*perPage,page*perPage).forEach(p=>{const item=document.createElement('p');item.textContent=p.title;$('hasil').append(item)});$('halaman').textContent=' '+page+' / '+total+' ';$('prev').disabled=page===1;$('next').disabled=page>=total}
+$('ambil').onclick=async()=>{try{const res=await fetch('https://jsonplaceholder.typicode.com/posts');if(!res.ok)throw Error();posts=await res.json();page=1;tampilPosts()}catch{$('hasil').textContent='Gagal mengambil data, cek internet.'}};
+$('cari').oninput=()=>{page=1;tampilPosts()};$('prev').onclick=()=>{page--;tampilPosts()};$('next').onclick=()=>{page++;tampilPosts()};tampilPosts();
+$('mode').onclick=()=>document.body.classList.toggle('gelap');
+let todos=baca('latihanTodo');function tampilTodo(){$('todos').replaceChildren();todos.forEach((t,i)=>{const li=document.createElement('li'),ck=document.createElement('input'),hapus=document.createElement('button');ck.type='checkbox';ck.checked=t.selesai;ck.onchange=()=>{todos[i].selesai=ck.checked;simpanTodo()};const label=document.createElement('span');label.textContent=t.teks;label.style.textDecoration=t.selesai?'line-through':'none';hapus.textContent='Hapus';hapus.onclick=()=>{todos.splice(i,1);simpanTodo()};li.append(ck,label,hapus);$('todos').append(li)})}function simpanTodo(){localStorage.setItem('latihanTodo',JSON.stringify(todos));tampilTodo()};$('todo-form').onsubmit=e=>{e.preventDefault();todos.push({teks:$('todo-input').value.trim(),selesai:false});simpanTodo();e.target.reset()};tampilTodo();
+</script></body></html>

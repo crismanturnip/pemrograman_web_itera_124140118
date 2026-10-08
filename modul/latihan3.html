@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><title>Latihan array dan objek</title></head><body>
+<h1>Latihan Array dan Objek</h1>
+<label>Nama <input id="nama"></label><label>NIM <input id="nim"></label><label>Jurusan <input id="jurusan"></label><label>Nilai <input id="nilai" type="number"></label>
+<button id="simpan">Tambah Mahasiswa</button>
+<button id="urut-asc">Urut A-Z</button><button id="urut-desc">Urut Z-A</button>
+<p id="info"></p><h2>Mahasiswa dengan nilai di atas rata-rata</h2><p id="atas-rata"></p>
+<table border="1" cellpadding="6"><thead><tr><th>Nama</th><th>NIM</th><th>Jurusan</th><th>Nilai</th><th>Aksi</th></tr></thead><tbody id="tabel"></tbody></table>
+<script>
+let mahasiswa = [
+{nama:"Andi",nim:"001",jurusan:"Informatika",nilai:85},
+{nama:"Budi",nim:"002",jurusan:"Informatika",nilai:90},
+{nama:"Citra",nim:"003",jurusan:"Informatika",nilai:75},
+{nama:"Dina",nim:"004",jurusan:"Informatika",nilai:95},
+{nama:"Eko",nim:"005",jurusan:"Informatika",nilai:80}
+];
+let editIndex = -1;
+function tampil() {
+const tabel = document.getElementById("tabel"); tabel.replaceChildren();
+mahasiswa.forEach((m,i) => {
+const tr = document.createElement("tr");
+[m.nama,m.nim,m.jurusan,m.nilai].forEach(v => { const td=document.createElement("td");td.textContent=v;tr.appendChild(td); });
+const td=document.createElement("td");
+const edit=document.createElement("button"); edit.textContent="Edit";edit.onclick=()=>{
+editIndex=i; ["nama","nim","jurusan","nilai"].forEach(k => document.getElementById(k).value=m[k]);
+document.getElementById("simpan").textContent="Simpan Perubahan";};
+const hapus=document.createElement("button");hapus.textContent="Hapus";hapus.onclick=()=>{mahasiswa.splice(i,1);editIndex=-1;tampil();};
+td.append(edit,hapus);tr.appendChild(td);tabel.appendChild(tr);
+});
+const rata=mahasiswa.length ? mahasiswa.reduce((total,m)=>total+m.nilai,0)/mahasiswa.length : 0;
+const tertinggi=mahasiswa.length ? mahasiswa.reduce((a,b)=>a.nilai>b.nilai?a:b) : null;
+document.getElementById("info").textContent=`Rata-rata: ${rata.toFixed(2)}. Nilai tertinggi: ${tertinggi ? tertinggi.nama+" ("+tertinggi.nilai+")" : "belum ada"}`;
+document.getElementById("atas-rata").textContent=mahasiswa.filter(m=>m.nilai>rata).map(m=>m.nama).join(", ") || "tidak ada";
+}
+document.getElementById("simpan").onclick=()=>{
+const m={nama:document.getElementById("nama").value.trim(),nim:document.getElementById("nim").value.trim(),jurusan:document.getElementById("jurusan").value.trim(),nilai:Number(document.getElementById("nilai").value)};
+if(!m.nama||!m.nim||!m.jurusan||!document.getElementById("nilai").value||m.nilai<0||m.nilai>100){alert("isi data dengan benar");return;}
+if(editIndex>=0)mahasiswa[editIndex]=m;else mahasiswa.push(m);
+editIndex=-1;["nama","nim","jurusan","nilai"].forEach(k=>document.getElementById(k).value="");document.getElementById("simpan").textContent="Tambah Mahasiswa";tampil();
+};
+document.getElementById("urut-asc").onclick=()=>{mahasiswa.sort((a,b)=>a.nama.localeCompare(b.nama));tampil();};
+document.getElementById("urut-desc").onclick=()=>{mahasiswa.sort((a,b)=>b.nama.localeCompare(a.nama));tampil();};
+tampil();
+</script></body></html>

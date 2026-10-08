@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><title>Latihan variabel dan kondisional</title></head><body>
+<h1>Latihan Variabel dan Kondisional</h1><div id="hasil"></div>
+<script>
+const nama = "Crisman Panorangi Turnip";
+let umur = 20; // contoh umur, boleh diganti
+const kotaAsal = "Lampung";
+const nilai = 85;
+const angkaHari = 4;
+const grade = nilai >= 90 ? "A" : nilai >= 80 ? "B" : nilai >= 70 ? "C" : nilai >= 60 ? "D" : "E";
+let kategori;
+if (umur < 12) kategori = "anak";
+else if (umur < 18) kategori = "remaja";
+else if (umur < 60) kategori = "dewasa";
+else kategori = "lansia";
+let hari;
+switch (angkaHari) {
+case 1: hari = "Monday"; break;
+case 2: hari = "Tuesday"; break;
+case 3: hari = "Wednesday"; break;
+case 4: hari = "Thursday"; break;
+case 5: hari = "Friday"; break;
+case 6: hari = "Saturday"; break;
+case 7: hari = "Sunday"; break;
+default: hari = "angka tidak valid";
+}
+document.getElementById("hasil").innerHTML = `
+<p>Nama: ${nama}</p><p>Umur (contoh): ${umur}</p><p>Kota asal: ${kotaAsal}</p>
+<p>Nilai: ${nilai} - ${nilai >= 70 ? "lulus" : "tidak lulus"}</p>
+<p>Kategori umur: ${kategori}</p><p>Hari ke-${angkaHari}: ${hari}</p><p>Grade: ${grade}</p>`;
+</script></body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><title>Latihan loop dan fungsi</title></head><body>
+<h1>Latihan Loop dan Fungsi</h1>
+<label>Angka tabel perkalian <input id="angka" type="number" value="5"></label><button id="lihat">Tampilkan</button><pre id="perkalian"></pre>
+<p id="contoh"></p><h2>Hitung BMI</h2>
+<label>Berat (kg) <input id="berat" type="number" value="60"></label>
+<label>Tinggi (cm) <input id="tinggi" type="number" value="165"></label><button id="hitung">Hitung</button><p id="bmi"></p>
+<h2>FizzBuzz 1-100</h2><p id="fizzbuzz"></p>
+<script>
+function faktorial(n) { let hasil = 1; for (let i = 2; i <= n; i++) hasil *= i; return hasil; }
+function prima(n) { if (n < 2) return false; for (let i = 2; i * i <= n; i++) if (n % i === 0) return false; return true; }
+function hitungBMI(berat, tinggiCm) { const tinggiMeter = tinggiCm / 100; return berat / (tinggiMeter * tinggiMeter); }
+document.getElementById("lihat").addEventListener("click", () => {
+const n = Number(document.getElementById("angka").value); let teks = "";
+for (let i = 1; i <= 10; i++) teks += `${n} x ${i} = ${n*i}\n`;
+document.getElementById("perkalian").textContent = teks;
+});
+document.getElementById("lihat").click();
+document.getElementById("contoh").textContent = `5! = ${faktorial(5)}; 7 bilangan prima? ${prima(7) ? "ya" : "tidak"}`;
+document.getElementById("hitung").addEventListener("click", () => {
+const b = Number(document.getElementById("berat").value), t = Number(document.getElementById("tinggi").value);
+document.getElementById("bmi").textContent = b > 0 && t > 0 ? `BMI: ${hitungBMI(b,t).toFixed(2)}` : "berat dan tinggi harus lebih dari 0";
+});
+let fizz = [];
+for (let i = 1; i <= 100; i++) fizz.push(i % 15 === 0 ? "FizzBuzz" : i % 3 === 0 ? "Fizz" : i % 5 === 0 ? "Buzz" : i);
+document.getElementById("fizzbuzz").textContent = fizz.join(", ");
+</script></body></html>
