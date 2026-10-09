@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 25px;
+}
+
+.kotak {
+    max-width: 650px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+fieldset {
+    border: 1px solid gray;
+    padding: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #eeeeee;
+}

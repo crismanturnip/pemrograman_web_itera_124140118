@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pendaftaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kotak">
+        <h1>Pendaftaran Mahasiswa</h1>
+        <p>Silakan isi form pendaftaran dibawah ini</p>
+
+        <form action="detail_pendaftaran.html" method="GET">
+            <fieldset>
+
+                <p>
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" required>
+                </p>
+
+                <p>
+                    <label for="nim">NIM</label>
+                    <input type="text" id="nim" name="nim" required>
+                </p>
+
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                    <label for="prodi">Program Studi</label>
+                    <select id="prodi" name="prodi" required>
+                        <option value="">Pilih program studi</option>
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Teknik Elektro">Teknik Elektro</option>
+                        <option value="Teknik Sipil">Teknik Sipil</option>
+                        <option value="Teknik Sipil">Teknik Mesin</option>
+                        <option value="Teknik Sipil">Teknik Pertambangan</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="kelas">Kelas</label>
+                    <select id="kelas" name="kelas" required>
+                        <option value="">Pilih kelas</option>
+                        <option value="RA">RA</option>
+                        <option value="RB">RB</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="alamat">Alamat</label>
+                    <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                </p>
+
+                <button type="submit">Daftar</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
