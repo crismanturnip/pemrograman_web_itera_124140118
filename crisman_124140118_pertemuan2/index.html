@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kuliah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="header-content">
+            <div>
+                <p class="label">Halaman Dashboard</p>
+                <h1>Dashboard Kuliah</h1>
+                <p id="tanggalSekarang">Memuat tanggal...</p>
+            </div>
+
+            <div class="weather-box">
+                <p>Cuaca sekitar ITERA</p>
+                <strong id="weatherText">Memuat cuaca...</strong>
+                <small id="weatherInfo"></small>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="ringkasan">
+            <div class="stat">
+                <span>Total tugas</span>
+                <strong id="totalTugas">0</strong>
+            </div>
+            <div class="stat">
+                <span>Belum selesai</span>
+                <strong id="belumSelesai">0</strong>
+            </div>
+            <div class="stat">
+                <span>Sudah selesai</span>
+                <strong id="sudahSelesai">0</strong>
+            </div>
+        </section>
+
+        <section class="grid-layout">
+            <div class="card">
+                <div class="card-title">
+                    <p class="label">Form tugas</p>
+                    <h2 id="formTitle">Tambah Tugas</h2>
+                </div>
+
+                <form id="taskForm">
+                    <input type="hidden" id="editId">
+
+                    <div class="form-group">
+                        <label for="mataKuliah">Mata kuliah</label>
+                        <input type="text" id="mataKuliah" placeholder="Contoh: Jaringan Komputer" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="namaTugas">Nama tugas</label>
+                        <input type="text" id="namaTugas" placeholder="Contoh: Laporan praktikum" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="deadline">Deadline</label>
+                            <input type="date" id="deadline" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prioritas">Prioritas</label>
+                            <select id="prioritas">
+                                <option value="rendah">Rendah</option>
+                                <option value="sedang" selected>Sedang</option>
+                                <option value="tinggi">Tinggi</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="button-row">
+                        <button type="submit" id="submitBtn">Tambah tugas</button>
+                        <button type="button" id="cancelBtn" class="btn-secondary hidden">Batal edit</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card">
+                <div class="card-title list-header">
+                    <div>
+                        <p class="label">Daftar</p>
+                        <h2>Tugas</h2>
+                    </div>
+
+                    <select id="filterStatus" aria-label="Filter tugas">
+                        <option value="semua">Semua tugas</option>
+                        <option value="belum">Belum selesai</option>
+                        <option value="selesai">Sudah selesai</option>
+                    </select>
+                </div>
+
+                <div id="taskList" class="task-list"></div>
+                <div id="emptyState" class="empty-state">
+                    <strong>Belum ada tugas</strong>
+                    <p>Silakan tambahkan tugas melalui form.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
