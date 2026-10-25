@@ -1,0 +1,2 @@
+.book-list { display:grid; gap:10px; }
+.empty-message { padding:28px; text-align:center; border:1px dashed #bdc7cf; border-radius:7px; color:#6b7280; background:#fafafa; }

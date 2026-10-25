@@ -1,0 +1,12 @@
+.book-form { background:#fff; border:1px solid #d9e1e8; border-radius:8px; padding:20px; }
+.book-form h2 { margin:0 0 18px; }
+.form-group { margin-bottom:14px; }
+.form-group label { display:block; margin-bottom:6px; font-size:.9rem; font-weight:600; }
+.form-group input,.form-group select { width:100%; padding:10px 11px; border:1px solid #aeb9c4; border-radius:5px; background:#fff; }
+.form-group input:focus,.form-group select:focus { outline:2px solid #bddbf0; border-color:#20639b; }
+.form-group .input-error { border-color:#bb2d3b; background:#fff8f8; }
+.error-text { color:#bb2d3b; display:block; margin-top:5px; }
+.form-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.primary-btn,.secondary-btn { border:0; color:#fff; border-radius:5px; padding:10px 14px; }
+.primary-btn { background:#20639b; }
+.secondary-btn { background:#6b7280; }

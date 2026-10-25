@@ -1,0 +1,12 @@
+.book-card { background:#fff; border:1px solid #d9e1e8; border-radius:7px; padding:16px; display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.book-card h3 { margin:7px 0 4px; }
+.book-card p { margin:0; color:#67727c; }
+.status-badge { display:inline-block; font-size:.72rem; padding:4px 8px; border-radius:20px; font-weight:700; }
+.status-milik { background:#e2f1e8; color:#28623d; }
+.status-baca { background:#e2edf8; color:#245b86; }
+.status-beli { background:#fff0d5; color:#8a5a00; }
+.book-actions { display:flex; gap:7px; flex-shrink:0; }
+.book-actions button { color:#fff; border:0; border-radius:5px; padding:8px 10px; }
+.edit-btn { background:#8a681a; }
+.delete-btn { background:#a73737; }
+@media(max-width:520px){ .book-card{align-items:flex-start; flex-direction:column;} }

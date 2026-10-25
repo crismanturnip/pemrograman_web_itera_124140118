@@ -1,0 +1,3 @@
+.app { min-height: 100vh; }
+.page-container { width: min(1050px, 92%); margin: 0 auto; }
+.page-section { padding: 28px 0 42px; }

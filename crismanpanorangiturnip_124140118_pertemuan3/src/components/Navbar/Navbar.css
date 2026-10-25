@@ -1,0 +1,7 @@
+.navbar { background:#173f5f; color:#fff; }
+.nav-inner { width:min(1050px,92%); margin:auto; min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.brand { font-weight:700; text-decoration:none; font-size:1.2rem; }
+.nav-links { display:flex; gap:8px; }
+.nav-link { text-decoration:none; padding:8px 10px; border-radius:5px; color:#dbe8f2; }
+.nav-link:hover, .nav-link.active { background:#fff; color:#173f5f; }
+@media (max-width:560px){ .nav-inner{flex-direction:column; padding:12px 0;} }
