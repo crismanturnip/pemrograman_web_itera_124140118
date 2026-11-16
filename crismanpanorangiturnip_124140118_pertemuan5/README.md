@@ -32,4 +32,4 @@ Saat program dijalankan, empat item berhasil ditambahkan ke perpustakaan. Daftar
 
 ## Screenshot Output
 
-Screenshot terminal hasil menjalankan program tersimpan di folder screenshots dengan nama image1.png. Screenshot tersebut menunjukkan penambahan item, daftar item tersedia, hasil pencarian, peminjaman, dan pengembalian. Gambar ini menjadi bukti output program untuk pengumpulan tugas Pertemuan 5.
+Screenshot terminal hasil menjalankan program tersimpan di folder screenshots dengan nama output_program.png. Screenshot tersebut menunjukkan penambahan item, daftar item tersedia, hasil pencarian, peminjaman, dan pengembalian. Gambar ini menjadi bukti output program untuk pengumpulan tugas Pertemuan 5.
