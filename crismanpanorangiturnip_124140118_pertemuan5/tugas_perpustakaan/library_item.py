@@ -1,4 +1,4 @@
-"""Jenis item yang dapat disimpan di perpustakaan."""
+"""Class dasar abstrak dan jenis item buku serta majalah."""
 
 from abc import ABC, abstractmethod
 
