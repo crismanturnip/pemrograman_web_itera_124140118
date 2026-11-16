@@ -1,0 +1,34 @@
+﻿=== Sistem Manajemen Perpustakaan ===
+Ditambahkan: [Buku] B001 - Dasar Python | Penulis: Andi | Tahun: 2024
+Ditambahkan: [Buku] B002 - Belajar OOP | Penulis: Siti | Tahun: 2025
+Ditambahkan: [Majalah] M001 - Teknologi Kini | Edisi: 12 | Bulan: November 2026
+Ditambahkan: [Majalah] M002 - Sains Populer | Edisi: 8 | Bulan: Oktober 2026
+
+Item tersedia:
+[Buku] B001 - Dasar Python | Penulis: Andi | Tahun: 2024
+[Buku] B002 - Belajar OOP | Penulis: Siti | Tahun: 2025
+[Majalah] M001 - Teknologi Kini | Edisi: 12 | Bulan: November 2026
+[Majalah] M002 - Sains Populer | Edisi: 8 | Bulan: Oktober 2026
+
+Cari ID B002:
+[Buku] B002 - Belajar OOP | Penulis: Siti | Tahun: 2025
+
+Cari judul 'TEKNOLOGI':
+[Majalah] M001 - Teknologi Kini | Edisi: 12 | Bulan: November 2026
+
+Crisman Panorangi Turnip meminjam B001:
+Berhasil.
+Status B001 dipinjam: True
+Item tersedia setelah dipinjam:
+[Buku] B002 - Belajar OOP | Penulis: Siti | Tahun: 2025
+[Majalah] M001 - Teknologi Kini | Edisi: 12 | Bulan: November 2026
+[Majalah] M002 - Sains Populer | Edisi: 8 | Bulan: Oktober 2026
+
+Kembalikan B001:
+Berhasil.
+Status B001 dipinjam: False
+Item tersedia setelah dikembalikan:
+[Buku] B001 - Dasar Python | Penulis: Andi | Tahun: 2024
+[Buku] B002 - Belajar OOP | Penulis: Siti | Tahun: 2025
+[Majalah] M001 - Teknologi Kini | Edisi: 12 | Bulan: November 2026
+[Majalah] M002 - Sains Populer | Edisi: 8 | Bulan: Oktober 2026
