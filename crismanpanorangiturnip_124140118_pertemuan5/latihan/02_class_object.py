@@ -1,4 +1,4 @@
-"""Contoh class, constructor, atribut instance, dan method."""
+"""Contoh class Mahasiswa, constructor, atribut, dan method."""
 
 
 class Mahasiswa:
