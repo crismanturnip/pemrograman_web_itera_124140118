@@ -1,4 +1,4 @@
-"""Pengelolaan koleksi perpustakaan."""
+"""Mengelola koleksi, pencarian, peminjaman, dan pengembalian item."""
 
 
 class Library:
