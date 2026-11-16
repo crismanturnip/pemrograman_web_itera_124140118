@@ -1,4 +1,4 @@
-"""Perbandingan data dan fungsi terpisah dengan class sederhana."""
+"""Membandingkan data mahasiswa prosedural dengan class mahasiswa."""
 
 
 def tampilkan_mahasiswa(data):
