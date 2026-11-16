@@ -1,4 +1,4 @@
-"""Contoh inheritance, super(), dan method overriding."""
+"""Contoh pewarisan Kendaraan ke Mobil dengan super()."""
 
 
 class Kendaraan:
