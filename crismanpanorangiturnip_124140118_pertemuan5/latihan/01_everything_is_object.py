@@ -1,4 +1,4 @@
-"""Menunjukkan bahwa nilai dan fungsi di Python adalah objek."""
+"""Menunjukkan tipe, class, dan method bawaan dari objek Python."""
 
 
 def salam():
