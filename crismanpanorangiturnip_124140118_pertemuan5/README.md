@@ -1,80 +1,35 @@
 # Praktikum PAW Pertemuan 5
 
-## Identitas
+Nama: Crisman Panorangi Turnip
+NIM: 124140118
+Kelas: RB
 
-- Nama: Crisman Panorangi Turnip
-- NIM: 124140118
-- Kelas: RB
+## Deskripsi Program
 
-## Deskripsi program
+Program ini merupakan sistem manajemen perpustakaan sederhana. Di dalamnya ada buku dan majalah yang dapat ditambahkan ke koleksi. Pengguna dapat melihat item yang tersedia, mencari item berdasarkan ID atau judul, meminjam item, dan mengembalikannya. Item yang sedang dipinjam tidak muncul dalam daftar tersedia.
 
-Program ini mengelola koleksi buku dan majalah sederhana. Item dapat ditambahkan, dicari berdasarkan ID atau judul, dipinjam, dan dikembalikan. Katalog tersedia hanya menampilkan item yang belum dipinjam.
+## Struktur Folder dan Daftar File
 
-## Struktur folder dan daftar file
+Folder latihan berisi tujuh file contoh OOP. File 01_everything_is_object.py menunjukkan bahwa nilai dan fungsi di Python adalah objek. File 01_procedural_vs_oop.py membandingkan pendekatan prosedural dan OOP. File 02_class_object.py berisi contoh class, object, constructor, atribut, dan method. File 03_inheritance.py menunjukkan pewarisan dan penggunaan super(). File 04_encapsulation.py membahas atribut public, protected, private, dan property. File 05_polymorphism.py menunjukkan method overriding. File 06_abstract_class.py berisi contoh abstract class.
 
-```text
-crismanpanorangiturnip_124140118_pertemuan5/
-├── latihan/
-│   ├── 01_everything_is_object.py   # tipe dan method objek Python
-│   ├── 01_procedural_vs_oop.py       # fungsi terpisah vs class
-│   ├── 02_class_object.py           # class, object, constructor, method
-│   ├── 03_inheritance.py            # pewarisan dan super()
-│   ├── 04_encapsulation.py          # public, protected, private, property
-│   ├── 05_polymorphism.py           # method overriding
-│   └── 06_abstract_class.py         # ABC dan abstract method
-├── tugas_perpustakaan/
-│   ├── library_item.py              # LibraryItem, Book, Magazine
-│   ├── member.py                    # Member
-│   ├── library.py                   # pengelolaan koleksi
-│   └── main.py                      # demonstrasi program
-├── screenshots/
-│   └── output_program.txt           # hasil eksekusi program
-├── README.md
-└── .gitignore
-```
+Folder tugas_perpustakaan berisi program utama. File library_item.py memuat class LibraryItem, Book, dan Magazine. File member.py memuat class Member. File library.py mengelola koleksi perpustakaan. File main.py menjalankan contoh penggunaan program. Folder screenshots berisi screenshot hasil program. File .gitignore mengabaikan cache Python dan virtual environment.
 
-## Cara menjalankan
+## Cara Menjalankan Program
 
-Dari folder pertemuan 5, jalankan:
+Buka terminal pada folder Pertemuan 5, lalu ketik python tugas_perpustakaan/main.py dan tekan Enter. Jika terminal sudah berada di dalam folder tugas_perpustakaan, cukup ketik python main.py. Program ini tidak membutuhkan library tambahan.
 
-```bash
-python tugas_perpustakaan/main.py
-```
+File latihan juga dapat dijalankan satu per satu. Sebagai contoh, ketik python latihan/03_inheritance.py dari folder Pertemuan 5 untuk menjalankan latihan inheritance.
 
-Untuk mencoba latihan, misalnya:
+## Penerapan Konsep OOP
 
-```bash
-python latihan/03_inheritance.py
-```
+Class dan object digunakan untuk membuat perpustakaan, anggota, buku, dan majalah. Book dan Magazine mewarisi LibraryItem serta menggunakan super() untuk menjalankan constructor induknya. Koleksi item dan status peminjaman disimpan sebagai atribut private. Status peminjaman dibaca melalui property dan diubah melalui method pinjam atau kembalikan.
 
-Tidak ada library tambahan yang perlu dipasang.
+Polymorphism terlihat saat perpustakaan memanggil get_detail() pada setiap item. Buku dan majalah memberikan informasi yang berbeda melalui method dengan nama yang sama. Abstraction diterapkan pada LibraryItem dengan ABC dan abstract method get_detail(), sehingga setiap jenis item harus menyediakan detailnya sendiri.
 
-## Penerapan OOP
+## Contoh Hasil Eksekusi
 
-- **Class dan object:** `Library`, `Member`, `Book`, dan `Magazine` dibuat sebagai class; `main.py` membuat objeknya.
-- **Inheritance:** `Book` dan `Magazine` mewarisi `LibraryItem` dan memakai `super().__init__()`.
-- **Encapsulation:** koleksi disimpan di `Library.__koleksi`; status pinjam disimpan di `LibraryItem.__is_dipinjam` dan dibaca lewat property `is_dipinjam`.
-- **Polymorphism:** `Book` dan `Magazine` punya hasil `get_detail()` berbeda. `Library` memanggil method yang sama untuk keduanya saat menampilkan katalog.
-- **Abstraction:** `LibraryItem` memakai `ABC` dan `@abstractmethod`, sehingga tiap jenis item harus membuat `get_detail()` sendiri.
+Saat program dijalankan, empat item berhasil ditambahkan ke perpustakaan. Daftar item tersedia menampilkan dua buku dan dua majalah. Pencarian ID B002 menemukan buku Belajar OOP, sedangkan pencarian judul TEKNOLOGI menemukan majalah Teknologi Kini. Setelah buku B001 dipinjam, statusnya menjadi True dan buku tersebut hilang dari daftar tersedia. Setelah dikembalikan, statusnya menjadi False dan buku muncul kembali.
 
-## Contoh hasil eksekusi
+## Screenshot Output
 
-```text
-Item tersedia:
-[Buku] B001 - Dasar Python | Penulis: Andi | Tahun: 2024
-[Majalah] M001 - Teknologi Kini | Edisi: 12 | Bulan: November 2026
-
-Crisman Panorangi Turnip meminjam B001:
-Berhasil.
-Status B001 dipinjam: True
-
-Kembalikan B001:
-Berhasil.
-Status B001 dipinjam: False
-```
-
-Output lengkap ada di `screenshots/output_program.txt`.
-
-## Screenshot output
-
-Lingkungan ini menyimpan keluaran terminal sebagai teks di `screenshots/output_program.txt`. Screenshot terminal asli perlu diambil secara manual sebelum pengumpulan, lalu disimpan sebagai `screenshots/output_program.png`.
+Screenshot terminal hasil menjalankan program tersimpan di folder screenshots dengan nama image1.png. Screenshot tersebut menunjukkan penambahan item, daftar item tersedia, hasil pencarian, peminjaman, dan pengembalian.
