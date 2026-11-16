@@ -1,3 +1,4 @@
+# Abaikan cache Python dan lingkungan virtual.
 __pycache__/
 *.pyc
 venv/
