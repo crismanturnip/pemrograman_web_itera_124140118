@@ -1,4 +1,4 @@
-"""Data dasar anggota perpustakaan."""
+"""Menyimpan ID dan nama anggota perpustakaan."""
 
 
 class Member:
