@@ -1,4 +1,4 @@
-"""Demonstrasi Sistem Manajemen Perpustakaan Sederhana."""
+"""Menjalankan contoh penggunaan sistem manajemen perpustakaan."""
 
 from library import Library
 from library_item import Book, Magazine
