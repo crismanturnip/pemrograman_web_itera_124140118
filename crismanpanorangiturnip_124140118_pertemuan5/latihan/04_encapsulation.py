@@ -1,4 +1,4 @@
-"""Contoh atribut public, protected, private, dan property."""
+"""Contoh perlindungan saldo rekening dengan atribut private dan property."""
 
 
 class RekeningBank:
