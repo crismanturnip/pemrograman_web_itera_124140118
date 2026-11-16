@@ -1,4 +1,4 @@
-"""Contoh ABC dan method yang wajib diimplementasikan subclass."""
+"""Contoh bangun datar abstrak yang diwujudkan oleh Persegi."""
 
 from abc import ABC, abstractmethod
 
