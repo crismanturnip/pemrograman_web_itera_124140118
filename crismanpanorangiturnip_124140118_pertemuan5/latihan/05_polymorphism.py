@@ -1,4 +1,4 @@
-"""Method yang sama menghasilkan perilaku berbeda pada dua subclass."""
+"""Contoh suara Mobil dan Motor melalui method yang sama."""
 
 
 class Kendaraan:
