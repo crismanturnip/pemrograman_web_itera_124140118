@@ -91,4 +91,7 @@ Seluruh endpoint Mahasiswa dan Matakuliah telah diuji dengan cURL pada PostgreSQ
 
 ## Tangkapan Layar Pengujian
 
-Tangkapan layar terminal cURL untuk seluruh endpoint Mahasiswa dan Matakuliah perlu dilampirkan saat pengumpulan. Jalankan perintah di atas dan ambil tangkapan layar yang memperlihatkan method, URL, respons JSON, dan status HTTP.
+- [Pengujian API Mahasiswa](screenshots/mahasiswa.png)
+- [Pengujian API Matakuliah](screenshots/matakuliah.png)
+
+Kedua tangkapan layar memperlihatkan method, URL, respons JSON, dan status HTTP untuk seluruh endpoint.
